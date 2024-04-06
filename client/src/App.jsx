@@ -4,8 +4,10 @@ import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Hotel from './pages/Hotel'
 import ListHotels from './pages/ListHotels'
-import CreateHotel from './pages/CreateHotel'
 import Header from './components/Header'
+import CreateListing from './pages/CreateListing'
+import axios from "axios"
+axios.defaults.baseURL = 'http://localhost:8800/api'
 
 export default function App() {
   return (
@@ -17,7 +19,7 @@ export default function App() {
         <Route path='/sign-up' element={<SignUp />}></Route>
         <Route path='/hotel' element={<Hotel />}></Route>
         <Route path='/list-hotels' element={<ListHotels />}></Route>
-        <Route path='/create-hotel' element={<CreateHotel />}></Route>
+        <Route path='/create-listing' element={<CreateListing />}></Route>
       </Routes>
     </BrowserRouter>
   )
