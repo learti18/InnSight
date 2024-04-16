@@ -10,13 +10,21 @@ export const getListings = (req,res) => {
     })
 }
 export const getListing = (req,res) => {
-    res.json("from controller")
+    const q = "SELECT * FROM listings WHERE id=?"
+    console.log(req.params.id)
+
+    db.query(q,[req.params.id],(err,data) => {
+        if(err){
+            return res.status(500).send(err);
+        }
+
+        return res.status(200).json(data[0])
+    })
 }
 export const addListing = (req,res) => {
     const { title, description, address, options,space, price, bedrooms, bathrooms, images } = req.body;
     
     const q = "INSERT INTO listings(title,description,address,options,space,price,images,bedrooms,bathrooms) VALUES (?)"
-
 
     const values = [
         title,
@@ -33,7 +41,7 @@ export const addListing = (req,res) => {
     db.query(q,[values], (err,data) => {
         if (err) {
             console.error(err);
-            return res.status(500).json({ error: 'Internal server error' }); // Send an error response
+            return res.status(500).json({ error: 'Internal server error' });
         }
 
         return res.status(200).json("Post has been created.");

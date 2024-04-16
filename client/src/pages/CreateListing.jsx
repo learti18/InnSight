@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import Perks from "../components/Perks";
+import { useNavigate } from 'react-router-dom'
 
 export default function CreateListing() {
     const [error,stateError] = useState("")
@@ -45,12 +46,13 @@ export default function CreateListing() {
                 bedrooms,
                 bathrooms
             })
-
+            navigate('/');
         }catch(err){
             console.log(err)
         }
     }
 
+   const navigate = useNavigate() 
   return (
     <main className='p-3 max-w-4xl mx-auto'>
         <h1 className='text-3xl font-semibold text-center my-7'></h1>
@@ -162,7 +164,7 @@ export default function CreateListing() {
                         />
                     <button onClick={upload} type="button" className='p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80'>Upload</button>
                 </div>
-                <button type="submit" className='bg-slate-600 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>Create listing</button>
+                <button type="submit" className='bg-gray-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>Create listing</button>
                 {error && <span>error</span>}
             </div>
         </form>
