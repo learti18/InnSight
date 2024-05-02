@@ -1,6 +1,5 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Home from './pages/Home'
-import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Hotel from './pages/Hotel'
 import ListProperties from './pages/ListProperties'
@@ -10,6 +9,8 @@ import axios from "axios"
 import Property from './pages/Property'
 import Footer from './components/Footer'
 import Blog from './pages/Blog'
+import Login from './pages/Login'
+
 
 axios.defaults.baseURL = 'http://localhost:8800/api'
 
@@ -19,9 +20,9 @@ export default function App() {
     <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path='/sign-in' element={<SignIn />}></Route>
         <Route path='/sign-up' element={<SignUp />}></Route>
         <Route path='/Blog' element={<Blog />}></Route>
+        <Route path='/Login' element={<Login />}></Route>
         <Route path='/hotel' element={<Hotel />}></Route>
         <Route path='/list-properties' element={<ListProperties />}></Route>
         <Route path='/create-listing' element={<CreateListing />}></Route>

@@ -70,11 +70,12 @@ import DropDownMenu, { DDMItem } from './DropDownMenu'; // Assuming DropDownMenu
                     Listings
                     </Link>
                     <Link
-                      to="/contact"
+                      to="Login"
                       className="text-gray-800 hover:text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
                     >
-                      Contact
+                      Login
                     </Link>
+                    
                   </div>
                 </div>
               </div>
