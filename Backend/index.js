@@ -4,13 +4,26 @@ import cors  from 'cors'
 import bodyParser from "body-parser";
 import multer from "multer"
 import { v4 as uuidv4 } from 'uuid';
+import postsRoutes from "./routes/posts.js"
+import usersRoutes from "./routes/users.js";
+import authRoutes from "./routes/auth.js"
+
 
 const app = express()
+
+
 
 app.use(cors())
 app.use(bodyParser.json());
 
 app.use("/api/listings",listingRoutes)
+
+app.use("/api/auth",authRoutes)
+app.use("/api/posts",postsRoutes)
+app.use("/api/users",usersRoutes)
+
+
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -35,3 +48,5 @@ app.post('/api/upload', upload.array('file', 12), function (req, res, next) {
 app.listen(8800,() => {
     console.log("connected to backend")
 })
+
+
