@@ -3,33 +3,8 @@ import { Link } from 'react-router-dom'
 import DropDownMenu, { DDMItem } from './DropDownMenu'; // Assuming DropDownMenu is in a separate file
 
     
-// export default function Header() {
-//   return (
-    // <header className='bg-sky-50 text-slate-900 px-4 sm:px-8'>
-    //     <div className='flex justify-between items-center max-w-7xl font-mono mx-auto py-7'> 
-    //         <Link to='/'>
-    //         <h1 className='font-bold text-md sm:text-2xl flex flex-wrap'>
-    //             <span>Inn</span>
-    //             <span>Sight</span>
-    //         </h1>
-    //         </Link>
-    //         <ul className='flex gap-2'>
-    //             <Link to='/'>
-    //             <li className='hidden sm:inline py-2 px-7 rounded-xl  uppercase hover:text-sky-500 cursor-pointer'>Home</li>
-    //             </Link>
-    //             <Link to='Blog'>
-    //             <li className='sm:inline py-2 px-7 rounded-xl uppercase hover:text-sky-500 cursor-pointer'>Blog</li>
-    //             </Link> 
-    //             <Link to='list-properties'>
-    //             <li className='hidden sm:inline py-2 px-7 rounded-xl uppercase  hover:text-sky-500 cursor-pointer'>Listings</li>
-    //             </Link>  
-    //             <Link to='sign-in'>
-    //             <li className='sm:inline py-2 px-7 rounded-xl uppercase hover:text-sky-500 cursor-pointer'>Sign in</li>
-    //             </Link>  
-                           
-    //         </ul>
-    //     </div>
-    // </header>
+ 
+
     
     
     const Navigation = () => { 
@@ -74,6 +49,12 @@ import DropDownMenu, { DDMItem } from './DropDownMenu'; // Assuming DropDownMenu
                       className="text-gray-800 hover:text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
                     >
                       Login
+                    </Link>
+                    <Link
+                      to="CotactUs"
+                      className="text-gray-800 hover:text-gray-800  px-3 py-2 rounded-md text-lg font-medium"
+                    >
+                     CotactUs
                     </Link>
                     
                   </div>

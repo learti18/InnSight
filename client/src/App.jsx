@@ -10,6 +10,10 @@ import Property from './pages/Property'
 import Footer from './components/Footer'
 import Blog from './pages/Blog'
 import Login from './pages/Login'
+import ContactUs from './pages/ContactUs'
+
+
+
 
 
 axios.defaults.baseURL = 'http://localhost:8800/api'
@@ -23,6 +27,8 @@ export default function App() {
         <Route path='/SignUp' element={<SignUp />}></Route>
         <Route path='/Blog' element={<Blog />}></Route>
         <Route path='/Login' element={<Login />}></Route>
+        <Route path='/ContactUs' element={<ContactUs />}></Route>
+
         <Route path='/hotel' element={<Hotel />}></Route>
         <Route path='/list-properties' element={<ListProperties />}></Route>
         <Route path='/create-listing' element={<CreateListing />}></Route>
