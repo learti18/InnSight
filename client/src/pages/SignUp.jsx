@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function SignUp() {
+    const [isAdmin, setIsAdmin] = useState(false);
     const [inputs, setInputs] = useState({
         name: "",
         lastname: "",
         date: "",
         email: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+    
+
     });
+    const navigate =useNavigate()
 
     const handleChange = (e) => {
         setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -35,6 +39,7 @@ function SignUp() {
                 email,
                 password
             });
+            navigate("/login")
     
             console.log("Success:", res.data);
             alert("Registration successful!");

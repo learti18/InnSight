@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import postsRoutes from "./routes/posts.js"
 import usersRoutes from "./routes/users.js";
 import authRoutes from "./routes/auth.js"
+import cookieParser from "cookie-parser"
 
 
 const app = express()
@@ -15,6 +16,8 @@ const app = express()
 
 app.use(cors())
 app.use(bodyParser.json());
+app.use(cookieParser());
+
 
 app.use("/api/listings",listingRoutes)
 
